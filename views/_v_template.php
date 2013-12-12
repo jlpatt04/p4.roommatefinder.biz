@@ -11,7 +11,6 @@
 </head>
 
 <body>	
-	<p> This is a test. </p>
 
 	<?php if(isset($content)) echo $content; ?>
 
