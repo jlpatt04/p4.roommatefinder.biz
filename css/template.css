@@ -1,0 +1,41 @@
+body {
+	background-image:url('noiseyTexture.png');
+}
+
+p, h1 {
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+span {
+	font-weight: bold;
+}
+
+#templateWrapper {
+	width:400px;
+	height:600px;
+	border: 4px solid white;
+	border-radius: 30px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: auto;
+	padding: 50px;
+	background-color: white;
+	opacity:0.7;
+	position: relative;
+}
+
+#columnOneProfile{
+	float:left;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	position:relative;
+}
+
+#columnTwoProfile{
+	float:right;
+	margin-right:40px;
+	position: relative;
+}
+

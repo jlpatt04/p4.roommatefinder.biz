@@ -31,8 +31,8 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'webmaster@myapp.com'); 
 
 # Default DB name for this app
-	define('DB_NAME', 'p4.roommatefinder.biz'); 
-
+	define('DB_NAME', 'roommate_p4_roommatefinder_biz'); 
+	
 # Timezone
 	define('TIMEZONE', 'America/New_York');
 
@@ -43,5 +43,5 @@ A email designated to receive messages from the server. Examples:
 	//define('SMTP_PASSWORD', '');
 
 # For extra security, you might want to set different salts than what the core uses
-	//define('PASSWORD_SALT', '');
-	//define('TOKEN_SALT', '');
+	define('PASSWORD_SALT', 'porthenryny12974');
+	define('TOKEN_SALT', 'fdajfdlajfdklfjdklfjd');

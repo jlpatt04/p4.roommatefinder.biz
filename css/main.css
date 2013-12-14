@@ -21,7 +21,7 @@ h1, p {
 	position: relative;
 }
 
-.SignUp, .Login {
+button {
 	background-color:gray;
 	font-family: "Arial Black", Gadget, sans-serif;	
 	-moz-border-radius:28px;

@@ -71,12 +71,22 @@
 		</form>
 	</div> 
 	<div id='wrapper2'>
-	<h1>Welcome to Boston!</h1>
-	<br>
+	<h1>Welcome to Boston <?php echo APP_NAME;?><?php if($user) echo ', '.$user->first_name; ?></h1>
+	<br><br>
 	<p> We know how difficult it can be to find a compatible roommate. Let us help you find a roommate with similar interests, location preference, and age. </p>
-	<br>
-	<button type="button" class ='SignUp'>Signup</button>
-	<button type="button" class ='Login'>Login</button>
+	<br><br>
+
+	<?php if($user):?>
+		<p>Click Profile below so we can find you a roommate!</p>
+		<br><br>
+		<button type="button" class ='Profile'>Profile</button>
+		<button type="button" class ='Logout'>Logout</button>
+
+	<?php else: ?>
+		<button type="button" class ='SignUp'>Signup</button>
+		<button type="button" class ='Login'>Login</button>
+	<?php endif; ?>
+	
 	</div>
 	</div>
 
