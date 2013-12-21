@@ -1,4 +1,4 @@
-<form method='POST' action='/users/p_signup'>
+<form method='POST' action='/'>
     First Name<br>
         <input type='text' name='first_name'>
         <br><br>

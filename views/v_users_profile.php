@@ -7,16 +7,16 @@
 <div id = 'columnOneProfile'>
 <span>Select two neighborhoods:</span>
 <br>
-<input type ="checkbox" name = "neighborhood" value ="Cambridge">Cambridge<br>
-<input type ="checkbox" name = "neighborhood" value ="Somerville">Somerville<br>
-<input type ="checkbox" name = "neighborhood" value ="Jamaica Plain">Jamaica Plain<br>
-<input type ="checkbox" name = "neighborhood" value ="East Boston">East Boston<br>
-<input type ="checkbox" name = "neighborhood" value ="Boston">Boston<br>
-<input type ="checkbox" name = "neighborhood" value ="Brookline">Brookline<br>
-<input type ="checkbox" name = "neighborhood" value ="Allston/Brighton">Allston<br>
-<input type ="checkbox" name = "neighborhood" value ="Charleston">Charlestown<br>
-<input type ="checkbox" name = "neighborhood" value ="Dorchester">Dorchester<br>
-<input type ="checkbox" name = "neighborhood" value ="W.Roxbury">W.Roxbury<br>
+<input type ="checkbox" name = "neighborhood[0]" value ="Cambridge">Cambridge<br>
+<input type ="checkbox" name = "neighborhood[1]" value ="Somerville">Somerville<br>
+<input type ="checkbox" name = "neighborhood[2]" value ="Jamaica Plain">Jamaica Plain<br>
+<input type ="checkbox" name = "neighborhood[3]" value ="East Boston">East Boston<br>
+<input type ="checkbox" name = "neighborhood[4]" value ="Boston">Boston<br>
+<input type ="checkbox" name = "neighborhood[5]" value ="Brookline">Brookline<br>
+<input type ="checkbox" name = "neighborhood[6]" value ="Allston/Brighton">Allston<br>
+<input type ="checkbox" name = "neighborhood[7]" value ="Charleston">Charlestown<br>
+<input type ="checkbox" name = "neighborhood[8]" value ="Dorchester">Dorchester<br>
+<input type ="checkbox" name = "neighborhood[9]" value ="West Roxbury">W.Roxbury<br>
 <br>
 
 <span>Rent per person:</span>
@@ -40,27 +40,27 @@
 <input type ="radio" name = "age" value ="30+">30+<br>
 <br>
 
-<span>Looking For:</span>
+<span>Smoker:</span>
 <br>
-<input type ="radio" name = "lookingFor" value ="friendRoomie">friend Roomie<br>
-<input type ="radio" name = "lookingFor" value ="strictlyRoomie">strictly Roomie<br>
+<input type ="radio" name = "smoker" value ="Yes">Yes<br>
+<input type ="radio" name = "smoker" value ="No">No<br>
 </div>
 
 <div id = 'columnTwoProfile'>
 <span>Interests:</span>
 <br>
-<input type ="checkbox" name = "interests" value ="beingActive">being active<br>
-<input type ="checkbox" name = "interests" value ="reading">reading<br>
-<input type ="checkbox" name = "interests" value ="traveling">traveling<br>
-<input type ="checkbox" name = "interests" value ="cooking">cooking<br>
-<input type ="checkbox" name = "interests" value ="playSports">playing sports<br>
-<input type ="checkbox" name = "interests" value ="watchSports">watching sports<br>
-<input type ="checkbox" name = "interests" value ="currentEvents">current events<br>
+<input type ="checkbox" name = "interests[0]" value ="being active">being active<br>
+<input type ="checkbox" name = "interests[1]" value ="reading">reading<br>
+<input type ="checkbox" name = "interests[2]" value ="traveling">traveling<br>
+<input type ="checkbox" name = "interests[3]" value ="cooking">cooking<br>
+<input type ="checkbox" name = "interests[4]" value ="play sports">playing sports<br>
+<input type ="checkbox" name = "interests[5]" value ="watch sports">watching sports<br>
+<input type ="checkbox" name = "interests[6]" value ="current events">current events<br>
 <br>
 
 <span>Cleanliness:</span>
 <br>
-<input type ="radio" name = "cleanliness" value ="veryClean">very clean<br>
+<input type ="radio" name = "cleanliness" value ="very clean">very clean<br>
 <input type ="radio" name = "cleanliness" value ="moderate">moderate<br>
 <input type ="radio" name = "cleanliness" value ="disorganized">disorganized<br>
 <input type ="radio" name = "cleanliness" value ="little dirty">a little dirty<br>
@@ -69,10 +69,10 @@
 
 <span>Party Preference:</span>
 <br>
-<input type ="radio" name = "party" value ="greaterThan3"> 3+/week<br>
-<input type ="radio" name = "party" value ="weekends">weekends<br>
-<input type ="radio" name = "party" value ="lightDrinker">light drinker<br>
-<input type ="radio" name = "party" value ="noDrinking">no drinking<br>
+<input type ="radio" name = "partyPreference" value ="3+/week"> 3+/week<br>
+<input type ="radio" name = "partyPreference" value ="weekends">weekends<br>
+<input type ="radio" name = "partyPreference" value ="light drinker">light drinker<br>
+<input type ="radio" name = "partyPreference" value ="no drinking">no drinking<br>
 <br>
 
 <span>Gender:</span>
@@ -83,8 +83,8 @@
 
 <span>Gender Preference:</span>
 <br>
-<input type ="radio" name = "gender" value ="female">female<br>
-<input type ="radio" name = "gender" value ="male">male<br>
+<input type ="radio" name = "genderPreference" value ="female">female<br>
+<input type ="radio" name = "genderPreference" value ="male">male<br>
 <input type ="radio" name = "genderPreference" value ="noPreference">doesn't matter<br>
 <br><br>
 
