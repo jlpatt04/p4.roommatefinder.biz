@@ -55,7 +55,7 @@ class users_controller extends base_controller {
         $_POST['created'] = Time::now();
         $_POST['modified'] = Time::now();
          
-         #Encrypt the password
+        #Encrypt the password
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
          
          #Create an encrypted token via their email address and a random string
@@ -64,12 +64,9 @@ class users_controller extends base_controller {
         #Insert this user into the database
         $user_id = DB::instance(DB_NAME)->insert('users',$_POST);
 
-        /*# Search the db for this email and password
+        # Search the db for this email and password
         # Retrieve the token if it's available
-         $q = "SELECT token 
-            FROM users 
-            WHERE email = '".$_POST['email']."' 
-            AND password = '".$_POST['password']."'";
+         $q = "SELECT token FROM users WHERE email = '".$_POST['email']."' AND password = '".$_POST['password']."'";
 
         $token = DB::instance(DB_NAME)->select_field($q);   
 
@@ -81,25 +78,22 @@ class users_controller extends base_controller {
 
         # But if we did, login succeeded! 
         } else {
-*/
-    
-        /*Store this token in a cookie using setcookie()
+
+        /* 
+        Store this token in a cookie using setcookie()
         Important Note: *Nothing* else can echo to the page before setcookie is called
         Not even one single white space.
         param 1 = name of the cookie
         param 2 = the value of the cookie
         param 3 = when to expire
-        param 4 = the path of the cooke (a single forward slash sets it for the entire domain) */
-        /*
+        param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
+        */
         setcookie("token", $token, strtotime('+2 weeks'), '/');
 
         # Send them to the main page - or whever you want them to go
-        Router::redirect("/"); 
-       */
+        Router::redirect("/");
 
-        #Setup view
-        $this->template->content = View::instance("v_users_p_signup");
-        $this->template->title = "Account Created";
+        }
     
         #Render template
         echo $this->template;
@@ -200,17 +194,32 @@ class users_controller extends base_controller {
 
         # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
-   
-        /*
-        $neighborhood = $_POST['neighborhood'];
-        #Insert this user into the database
-        $neighborhood = DB::instance(DB_NAME)->insert('neighborhood_user',$_POST['neighborhood']);
-        
-        $interests = $_POST['interests'];
-        #Insert this user into the database
-        $interests = DB::instance(DB_NAME)->insert('interest_user',$_POST['interests']);
-        */
 
+        # Make user_id stored in a variable for each sql insert
+        $user_id = $this->user->user_id;
+    
+        $neighborhood = $_POST['neighborhood'];
+        
+        if(empty($neighborhood)) {
+            echo("You didn't select any neighborhood.");
+        } else {
+            foreach ($neighborhood as $value) {
+                $userNeighborhoods = Array("neighborhood_id" => $value, "user_id" => $user_id);
+                $neighborhood = DB::instance(DB_NAME)->insert('neighborhood_user',$userNeighborhoods);
+            }
+        }
+
+
+        $interests = $_POST['interests'];
+
+        if(empty($interests)) {
+            echo("You didn't select any interests.");
+        } else {
+            foreach ($interests as $value) {
+                $userInterests = Array("interest_id" => $value, "user_id" => $user_id);
+                $interests = DB::instance(DB_NAME)->insert('interest_user',$userInterests);
+            }
+        } 
         
         $rent = $_POST['rent'];
         $age = $_POST['age'];
@@ -219,40 +228,13 @@ class users_controller extends base_controller {
         $partyPreference = $_POST['partyPreference'];
         $gender = $_POST['gender'];
         $genderPreference = $_POST['genderPreference'];
-        //$user_id = $_POST['$this->user->user_id'];  //how do i get ahold of the user id?
+        //$_POST['user_id'] = $this->user->user_id;
 
+        $userPreferences = Array("rent" => $rent,"age" => $age, "cleanliness" => $cleanliness, "smoker" => $smoker, "partyPreference" => $partyPreference, "gender" => $gender, "genderPreference" => $genderPreference, "user_id" => $user_id);
+     
         #Insert this profile info into the database
-        $preferences = DB::instance(DB_NAME)->insert('preferences', $_POST, "WHERE user_id = '".$this->user->user_id."'");
-        //$preferences = DB::instance(DB_NAME)->insert('preferences',$_POST);
-
-     /*if(isset($_POST['age'])) {
-        echo ("Smoker: " . $smoking . "<br>");
-    } 
-
-     if(isset($_POST['age'])) {
-        echo ("Age: " . $age . "<br>");
-    }
-
-    if(isset($_POST['rent'])) {
-        echo ("Rent: " . $rent . "<br>");
-    }
-    //prints checked neighborhoods
-        if(empty($neighborhood)) {
-            echo("You didn't select any neighborhood.");
-        } else {
-            foreach ($neighborhood as $value) {
-                echo("Neighborhood:  " . $value . " " . "<br>");
-            }
-        }
-
-    //prints checked interests
-        if(empty($interests)) {
-            echo("You didn't select any interests.");
-        } else {
-            foreach ($interests as $value) {
-                echo("Interest:  " . $value . " " . "<br>");
-            }
-        } */
+        $preferences = DB::instance(DB_NAME)->insert('preferences', $userPreferences);
+    
 
         #Setup view
         $this->template->content = View::instance("v_users_p_profile");

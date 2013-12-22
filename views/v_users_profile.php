@@ -7,16 +7,16 @@
 <div id = 'columnOneProfile'>
 <span>Select two neighborhoods:</span>
 <br>
-<input type ="checkbox" name = "neighborhood[0]" value ="Cambridge">Cambridge<br>
-<input type ="checkbox" name = "neighborhood[1]" value ="Somerville">Somerville<br>
-<input type ="checkbox" name = "neighborhood[2]" value ="Jamaica Plain">Jamaica Plain<br>
-<input type ="checkbox" name = "neighborhood[3]" value ="East Boston">East Boston<br>
-<input type ="checkbox" name = "neighborhood[4]" value ="Boston">Boston<br>
-<input type ="checkbox" name = "neighborhood[5]" value ="Brookline">Brookline<br>
-<input type ="checkbox" name = "neighborhood[6]" value ="Allston/Brighton">Allston<br>
-<input type ="checkbox" name = "neighborhood[7]" value ="Charleston">Charlestown<br>
-<input type ="checkbox" name = "neighborhood[8]" value ="Dorchester">Dorchester<br>
-<input type ="checkbox" name = "neighborhood[9]" value ="West Roxbury">W.Roxbury<br>
+<input type ="checkbox" name = "neighborhood[0]" value ="1">Cambridge<br>
+<input type ="checkbox" name = "neighborhood[1]" value ="2">Somerville<br>
+<input type ="checkbox" name = "neighborhood[2]" value ="3">Jamaica Plain<br>
+<input type ="checkbox" name = "neighborhood[3]" value ="4">East Boston<br>
+<input type ="checkbox" name = "neighborhood[4]" value ="5">Boston<br>
+<input type ="checkbox" name = "neighborhood[5]" value ="6">Brookline<br>
+<input type ="checkbox" name = "neighborhood[6]" value ="7">Allston<br>
+<input type ="checkbox" name = "neighborhood[7]" value ="8">Charlestown<br>
+<input type ="checkbox" name = "neighborhood[8]" value ="9">Dorchester<br>
+<input type ="checkbox" name = "neighborhood[9]" value ="10">West Roxbury<br>
 <br>
 
 <span>Rent per person:</span>
@@ -42,20 +42,20 @@
 
 <span>Smoker:</span>
 <br>
-<input type ="radio" name = "smoker" value ="Yes">Yes<br>
-<input type ="radio" name = "smoker" value ="No">No<br>
+<input type ="radio" name = "smoker" value ="1">Yes<br>
+<input type ="radio" name = "smoker" value ="0">No<br>
 </div>
 
 <div id = 'columnTwoProfile'>
 <span>Interests:</span>
 <br>
-<input type ="checkbox" name = "interests[0]" value ="being active">being active<br>
-<input type ="checkbox" name = "interests[1]" value ="reading">reading<br>
-<input type ="checkbox" name = "interests[2]" value ="traveling">traveling<br>
-<input type ="checkbox" name = "interests[3]" value ="cooking">cooking<br>
-<input type ="checkbox" name = "interests[4]" value ="play sports">playing sports<br>
-<input type ="checkbox" name = "interests[5]" value ="watch sports">watching sports<br>
-<input type ="checkbox" name = "interests[6]" value ="current events">current events<br>
+<input type ="checkbox" name = "interests[0]" value ="1">being active<br>
+<input type ="checkbox" name = "interests[1]" value ="2">reading<br>
+<input type ="checkbox" name = "interests[2]" value ="3">traveling<br>
+<input type ="checkbox" name = "interests[3]" value ="4">cooking<br>
+<input type ="checkbox" name = "interests[4]" value ="5">play sports<br>
+<input type ="checkbox" name = "interests[5]" value ="6">watch sports<br>
+<input type ="checkbox" name = "interests[6]" value ="7">current events<br>
 <br>
 
 <span>Cleanliness:</span>

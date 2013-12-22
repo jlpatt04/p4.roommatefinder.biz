@@ -4,15 +4,15 @@ $(document).ready(function() {
 	$('#signupForm').hide();
 }); 
 
-$('.Login').click(function() {
-	$('#wrapper2').hide(300);
-	$('#loginForm').show();
-});
-
 $('.SignUp').click(function() {
 	$('#wrapper2').hide(300);
 	$('#signupForm').show();
 }); 
+
+$('.Login').click(function() {
+        $('#wrapper2').hide(300);
+        $('#loginForm').show();
+});
 
 $('.Profile').click(function() {
 	window.location = "/users/profile/"
