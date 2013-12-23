@@ -79,8 +79,9 @@
 	<br><br>
 
 	<?php if($user):?>
-		<p>Click Profile below so we can find you a roommate!</p>
+		<p>Click Preferences below so we can learn about you and find you a roommate!</p>
 		<br><br>
+		<button type="button" class ='Preferences'>Preferences</button>
 		<button type="button" class ='Profile'>Profile</button>
 		<button type="button" class ='Logout'>Logout</button>
 
@@ -95,6 +96,10 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script>
+		var userHasPreferences = <?php echo $preferencesEntered.";" ?>
+		</script>
+
 		
 </body>
 </html>
