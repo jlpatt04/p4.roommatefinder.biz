@@ -174,8 +174,6 @@ class users_controller extends base_controller {
         #Delete their token cookie by setting it to a date in the past - effectively logging them out
         setcookie("token", "", strtotime('-1 year'), '/');
 
-        echo "This is the logout page";
-
         #Send them back to the main index.
         Router::redirect("/");
         
