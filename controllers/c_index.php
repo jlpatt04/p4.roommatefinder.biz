@@ -46,6 +46,9 @@ class index_controller extends base_controller {
 	        	$preferencesEntered = "true";
 	        }
 
+	        $this->template->content->loginFailed = "false";
+        	$this->template->content->user = $this->user;
+
 			}
 
 		# CSS/JS includes

@@ -117,6 +117,9 @@ class users_controller extends base_controller {
 
     public function p_login() {
 
+
+        $this->template->content= View::instance('v_index_index');
+
         # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
@@ -135,12 +138,43 @@ class users_controller extends base_controller {
         # If we didn't get a token back, it means login failed
         if(!$token) {
 
+        //$this->template->content->error = $error;
+        $this->template->content->loginFailed = "true";
+
         # Send them back to the login page
-        Router::redirect("/");
+        // Router::redirect("/");
+        echo $this->template;
+
 
         # But if we did, login succeeded! 
         } else {
 
+
+            $preferencesEntered = "false";
+
+            if($this->user->user_id){
+
+            $preferencesEntered ='SELECT
+                p.age,
+                p.rent,
+                p.cleanliness,
+                p.smoker,
+                p.partyPreference,
+                p.gender,
+                p.genderPreference
+            FROM preferences AS p
+            WHERE user_id = '.$this->user->user_id;
+
+            #Run the Query
+            $preferencesData = DB::instance(DB_NAME)->select_row($preferencesEntered);
+
+            if(empty($preferencesData)){
+                $preferencesEntered = "false";
+            } else {
+                $preferencesEntered = "true";
+            }
+
+            }
         /* 
         Store this token in a cookie using setcookie()
         Important Note: *Nothing* else can echo to the page before setcookie is called
@@ -151,9 +185,13 @@ class users_controller extends base_controller {
         param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
         */
         setcookie("token", $token, strtotime('+2 weeks'), '/');
-
+        $this->template->content->loginFailed = "false";
+        $this->template->content->user = $this->user;
+        $this->template->content->preferencesEntered = $preferencesEntered;
         # Send them to the main page - or whever you want them to go
-        Router::redirect("/");
+        //Router::redirect("/");
+
+        echo $this->template;
 
         }
 

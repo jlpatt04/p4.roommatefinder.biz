@@ -3,13 +3,12 @@
 	<link rel="stylesheet" href="/css/main.css" type="text/css">
 	<img src="/css/images/smiley.jpg" alt="Smiley face" height="150" width="150">
 <br>
-<?php 
-
-	echo $userInfo["first_name"]. "'s Profile"."<br>";
-	echo "Email: ".$userInfo["email"]."<br>";
-	echo "Rent: ".$preferencesData["rent"]."<br>";
-	echo "Age:  ".$preferencesData["age"]."<br>";
-	echo "Cleanliness:  ".$preferencesData["cleanliness"]."<br>";
+	<?php 
+		echo $userInfo["first_name"]. "'s Profile"."<br>";
+		echo "Email: ".$userInfo["email"]."<br>";
+		echo "Rent: ".$preferencesData["rent"]."<br>";
+		echo "Age:  ".$preferencesData["age"]."<br>";
+		echo "Cleanliness:  ".$preferencesData["cleanliness"]."<br>";
 
 	if($preferencesData["smoker"] == 0)	{
 		echo "Smoker: No" . "<br>";
@@ -17,9 +16,9 @@
 		echo "Smoker: Yes" . "<br>";
 	}
 
-	echo "Party Preference: ".$preferencesData["partyPreference"]."<br>";
-	echo "Gender: ".$preferencesData["gender"]."<br>";
-	echo "Gender Preference: ".$preferencesData["genderPreference"]."<br>";
+		echo "Party Preference: ".$preferencesData["partyPreference"]."<br>";
+		echo "Gender: ".$preferencesData["gender"]."<br>";
+		echo "Gender Preference: ".$preferencesData["genderPreference"]."<br>";
 
 	echo "Interests: ";
 	for($i = 0; $i < sizeof($interestsData); $i++){
@@ -57,12 +56,11 @@
 		echo "Gender: ".$rentNeighborhoodData[$i]["gender"]."<br>";
 		echo "<br><br>";
 	}
-?>
+	?>
 
 </body>
 
 <footer>
-	<br><br>
 	<button type="button" class ='Home'>Home</button>
 	<button type="button" class ='Logout2'>Logout</button>
 </footer>

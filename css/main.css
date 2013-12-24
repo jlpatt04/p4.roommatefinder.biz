@@ -1,3 +1,6 @@
+/*-------------------------------------------------------------------------------------------------
+CSS for index page divs and buttons
+-------------------------------------------------------------------------------------------------*/
 h1, p {
 	color: black;
 	font-family: "Arial Black", Gadget, sans-serif;
@@ -19,6 +22,12 @@ h1, p {
 	background-color: white;
 	opacity:0.7;
 	position: relative;
+}
+
+#signupForm {
+	margin-top: 0px;
+	margin-left: 20px;
+	margin bottom: 20px;
 }
 
 button {
@@ -58,7 +67,83 @@ button {
 /*-------------------------------------------------------------------------------------------------
 CSS for Form Errors
 -------------------------------------------------------------------------------------------------*/
-.error {
-color:red;
-font-size: 14px;
+.submit { 
+	background-color:gray;
+	font-family: "Arial Black", Gadget, sans-serif;	
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:4px solid;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:20px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 23px #854629;
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
 }
+
+
+#signupForm2 label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
+
+form.cmxform {
+	font-size: 0.3em;
+	color: #333;
+	vertical-align: center;
+	text-align: left;
+}
+
+form.cmxform legend {
+	padding-left: 0;
+}
+
+form.cmxform legend, form.cmxform label {
+	color: #333;
+}
+
+form.cmxform input{
+	 margin: 10px ;
+	 padding: 5px;
+}
+
+form.cmxform fieldset {
+	border: none;
+	background-color: #F8FDEF;
+	vertical-align: :left;
+}
+
+form.cmxform label:before{
+	content: '\a' ;
+	white-space: pre;
+} 
+
+form.cmxform label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-size: 0.8em;
+	display: block;
+	clear: left;
+}
+
+#loginFailedErrorDiv {
+	color: red;
+	font-size: 3em;
+	display: block;
+	clear: left;
+}
+
+div.error { display: none; }
+input {	border: 1px solid black; }
+input.checkbox { border: none }
+input:focus { border: 1px dotted black; }
+input.error { border: 1px dotted red; }
+form.cmxform .gray * { color: gray; }
+
+
